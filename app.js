@@ -28,7 +28,7 @@
   var t2Note = document.getElementById("t2-regime-note");
 
   function enrichCitationsHtml(str) {
-    return String(str).replace(/\[((?:s|c)\d+)\]/g, function (_, id) {
+    return String(str).replace(/\[(\d+)\]/g, function (_, id) {
       if (!SOURCES[id]) return "[" + id + "]";
       return '<button type="button" class="cite-btn" data-cite="' + id + '" aria-label="View source ' + id + '">[' + id + "]</button>";
     });
@@ -123,7 +123,7 @@
   var sourcesListEl = document.getElementById("sources-list");
   var sourceSearchInput = document.getElementById("source-search");
   var sourceCountLabels = document.querySelectorAll("[data-source-count]");
-  var allSourceKeys = Object.keys(SOURCES);
+  var allSourceKeys = Object.keys(SOURCES).sort(function (a, b) { return Number(a) - Number(b); });
   sourceCountLabels.forEach(function (el) {
     el.textContent = String(allSourceKeys.length);
   });
@@ -338,10 +338,10 @@
       "- Active Scenario Readout (" + reg.trade2Conviction + "): " + reg.trade2Note,
       "",
       "## 4. Key Catalysts & Primary Links",
-      "- Dec 10, 2026: ERCOT / PUCT Texas Data Center Audit release (" + SOURCES.s78000.url + ")",
-      "- Nov to Dec 2026: Lame-Duck Senate/House floor action on S. 5653 BAAJA (" + SOURCES.s79290.url + ")",
-      "- Jan 19, 2027: Texas Gov.-elect Gina Hinojosa inauguration & executive moratorium decision (" + SOURCES.s78001.url + ")",
-      "- Ballotpedia 40-of-41 Local Ballot Report: " + SOURCES.s78156.url
+      "- Dec 10, 2026: ERCOT / PUCT Texas Data Center Audit release (" + SOURCES["28"].url + ")",
+      "- Nov to Dec 2026: Lame-Duck Senate/House floor action on S. 5653 BAAJA (" + SOURCES["22"].url + ")",
+      "- Jan 19, 2027: Texas Gov.-elect Gina Hinojosa inauguration & executive moratorium decision (" + SOURCES["29"].url + ")",
+      "- Ballotpedia 40-of-41 Local Ballot Report: " + SOURCES["2"].url
     ].join("\n");
   }
 

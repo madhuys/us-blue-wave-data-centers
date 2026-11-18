@@ -50,10 +50,21 @@ class TestBlueWaveMicrosite(unittest.TestCase):
             html = f.read()
         with open(os.path.join(ROOT, "sources-data.js"), encoding="utf-8") as f:
             src_js = f.read()
-        cited = set(re.findall(r'data-cite="([sc]\d+)"', html))
-        self.assertGreaterEqual(len(cited), 15)
-        for handle in cited:
-            self.assertIn(f'id: "{handle}"', src_js, f"Missing source definition for {handle}")
+        with open(os.path.join(ROOT, "app.js"), encoding="utf-8") as f:
+            app_js = f.read()
+
+        # Zero internal [sN] or [cN] handles may remain anywhere in the site
+        for name, content in [("index.html", html), ("sources-data.js", src_js), ("app.js", app_js)]:
+            self.assertIsNone(
+                re.search(r"\[[sc]\d+\]|data-cite=\"[sc]\d+\"", content),
+                f"Found un-renumbered internal handle in {name}",
+            )
+
+        cited_in_order = re.findall(r'data-cite="(\d+)"', html)
+        self.assertGreaterEqual(len(set(cited_in_order)), 15)
+        self.assertEqual(cited_in_order[:3], ["1", "2", "3"], "Hero citations must start at [1], [2], [3]")
+        for handle in set(cited_in_order):
+            self.assertIn(f'id: "{handle}"', src_js, f"Missing source definition for [{handle}]")
 
 
 if __name__ == "__main__":
