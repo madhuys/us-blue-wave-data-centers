@@ -483,11 +483,11 @@ window.BLUEWAVE_REGIMES = {
   },
   baaja: {
     key: "baaja",
-    label: "Lame-Duck BAAJA Enacted ($55B 'And Pricing' + Fast NEPA)",
+    label: "Lame-Duck BAAJA Enacted ($55B And Pricing + Fast NEPA)",
     shortTag: "LAME-DUCK DEAL · S. 5653 PASSES",
     txGasDeferral: "6%",
     greenfieldWait: "52 mos",
-    transmissionCost: "$55B federal 'And Pricing'",
+    transmissionCost: "$55B federal And Pricing",
     summary: "Congress passes S. 5653 before January 2027 [s79290]: FERC enforces mandatory 'And Pricing' ($55B over 10 yrs) on computational loads of any size [s78118] [s79239], paired with 150-day NEPA lawsuit limits and FERC backstop interstate siting [s79216].",
     trade1Conviction: "MODERATE · Keep tight $929.77 GEV stop",
     trade1Note: "Mandatory upfront transmission guarantees purge 40%+ speculative phantom queue filings, keeping EQIX occupancy tight, but faster interstate 550 to 765 kV siting cushions HV grid equipment orders (tighten GEV short stop).",

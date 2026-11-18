@@ -1208,21 +1208,26 @@ body {
    ========================================================================== */
 @media (max-width: 860px) {
   .dispatch-rail {
-    grid-template-columns: 1fr auto;
-    height: 3.25rem;
-    padding-inline: 0.75rem;
+    grid-template-columns: 1fr;
+    height: 3.05rem;
+    padding-inline: 0.55rem;
   }
-  .dispatch-rail__freq { display: none; }
-  .rail-node { padding: 0.24rem 0.42rem; font-size: 0.62rem; }
+  .dispatch-rail__freq,
+  .dispatch-rail__actions { display: none; }
+  .dispatch-rail__track {
+    justify-content: space-between;
+    gap: 0.25rem;
+    overflow-x: auto;
+  }
+  .rail-node { padding: 0.26rem 0.44rem; font-size: 0.62rem; flex-shrink: 0; }
   .rail-node span.hide-sm { display: none; }
-  .btn-ghost.hide-sm { display: none; }
 
   /* Art-direct mobile hero separately per hero-depth.md:
      Place headline cleanly in upper storm sky ABOVE the 500kV tower silhouette */
   .hero-copy-wrap {
     z-index: 26;
     align-items: flex-start;
-    padding-top: clamp(1.6rem, 6svh, 3.2rem);
+    padding-top: clamp(1.4rem, 5svh, 2.8rem);
   }
   .hero-beat { max-width: 100%; }
   .hero-title {
@@ -1230,15 +1235,15 @@ body {
     transform: none;
   }
   .hero-sub {
-    font-size: 0.96rem;
+    font-size: 0.95rem;
     max-width: 34ch;
   }
   .hero-beat--secondary {
     left: var(--sc-gutter);
     right: var(--sc-gutter);
-    bottom: 4.1rem;
+    bottom: 3.8rem;
     max-width: none;
-    padding: 0.95rem 1.05rem;
+    padding: 0.9rem 1rem;
   }
   .hero-scrim-plate {
     background:
@@ -1264,20 +1269,56 @@ body {
   }
   .peak-stage {
     justify-content: flex-start;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 3.4rem;
+    overflow-y: auto;
   }
+  .peak-grid {
+    gap: 0.75rem;
+    align-items: start;
+  }
+  /* Overlap beats inside a single CSS grid cell so container height always fits tallest beat with zero collision */
   .peak-left {
-    min-height: 11.5rem;
+    display: grid;
+    min-height: 0;
   }
   .peak-beat {
-    padding: 0.9rem 1rem;
+    position: relative;
+    inset: auto;
+    grid-area: 1 / 1;
+    padding: 0.75rem 0.9rem;
   }
   .peak-beat h2, .peak-beat h3 {
-    font-size: 1.28rem;
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
+  }
+  .peak-beat p {
+    font-size: 0.8rem;
+    line-height: 1.42;
+    margin-bottom: 0.35rem;
+  }
+  .queue-instrument {
+    padding: 0.75rem 0.85rem;
   }
   .regime-tabs {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3rem;
+    margin-block: 0.45rem;
   }
+  .regime-btn {
+    padding: 0.38rem 0.35rem;
+    font-size: 0.6rem;
+  }
+  .regime-kpis {
+    gap: 0.35rem;
+    margin-bottom: 0.55rem;
+  }
+  .rkpi { padding: 0.4rem 0.45rem; }
+  .rkpi__val { font-size: 0.98rem; }
+  .track-stack { gap: 0.45rem; }
+  .qtrack__meta { font-size: 0.72rem; }
+  .qtrack__tag { display: none; }
+  .instrument-foot { font-size: 0.72rem; margin-top: 0.45rem; }
   .corridor-card {
     width: min(82vw, 22rem);
   }
@@ -1301,5 +1342,25 @@ body {
   }
   .qtrack__fill {
     transition: none;
+  }
+  /* Relay the 5 corridors into a directly readable multi-column grid under reduced motion (devices.md §3) */
+  #act-corridors {
+    height: auto !important;
+  }
+  #act-corridors [data-sc-stage] {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-block: var(--sc-7);
+  }
+  .corridor-rail {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+    width: 100%;
+    gap: 1.15rem;
+  }
+  .corridor-lead,
+  .corridor-card {
+    width: 100%;
   }
 }
