@@ -24,9 +24,18 @@ class TestBlueWaveMicrosite(unittest.TestCase):
             "fonts/BricolageGrotesque-Bold.ttf",
             "fonts/WorkSans-Regular.ttf",
             "fonts/SpaceMono-Regular.ttf",
+            "blue-wave-data-center-report.pdf",
         ]
         for rel in required:
             self.assertTrue(os.path.isfile(os.path.join(ROOT, rel)), f"Missing {rel}")
+
+    def test_hero_has_bold_pdf_download_cta(self):
+        with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
+            html = f.read()
+        self.assertIn('class="btn-hero-pdf"', html)
+        self.assertIn('href="blue-wave-data-center-report.pdf"', html)
+        pdf_path = os.path.join(ROOT, "blue-wave-data-center-report.pdf")
+        self.assertGreater(os.path.getsize(pdf_path), 10000)
 
     def test_no_em_or_en_dashes_in_visible_html(self):
         with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:

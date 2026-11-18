@@ -168,19 +168,23 @@ body {
   gap: 0.6rem;
 }
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid color-mix(in oklab, var(--sc-ink) 24%, transparent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #141E2B;
+  border: 1px solid color-mix(in oklab, var(--sc-ink) 26%, transparent);
   color: var(--sc-ink);
   padding: 0.42rem 0.78rem;
   border-radius: var(--sc-r-sm);
   font-family: var(--sc-font-mono);
   font-size: 0.72rem;
+  text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 150ms var(--sc-ease-out), transform 120ms var(--sc-ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
-  .btn-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+  .btn-ghost:hover { background: #1D2A3B; }
 }
 .btn-ghost:active { transform: scale(0.97); }
 
@@ -313,12 +317,83 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--sc-4);
+  gap: 0.85rem;
+  margin-bottom: 0.65rem;
 }
+.btn-hero-pdf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: #F29132;
+  color: #0B1017;
+  border: 2px solid #FFB05E;
+  padding: 0.86rem 1.45rem;
+  border-radius: var(--sc-r-sm);
+  font-family: var(--sc-font-display);
+  font-size: clamp(1.04rem, 1.28vw, 1.22rem);
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 12px 32px rgba(242, 145, 50, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 140ms var(--sc-ease-out), box-shadow 160ms var(--sc-ease-out), background-color 140ms var(--sc-ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-hero-pdf:hover {
+    background: #FFA042;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 38px rgba(242, 145, 50, 0.44), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+}
+.btn-hero-pdf:active { transform: scale(0.98); }
+.btn-hero-pdf__icon {
+  flex-shrink: 0;
+}
+.btn-hero-pdf__tag {
+  display: inline-block;
+  background: #0B1017;
+  color: #F29132;
+  padding: 0.22rem 0.5rem;
+  border-radius: 2px;
+  font-family: var(--sc-font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #131C27;
+  color: #EDF1F7;
+  border: 1px solid rgba(242, 145, 50, 0.58);
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--sc-r-sm);
+  font-family: var(--sc-font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 150ms var(--sc-ease-out), background-color 150ms var(--sc-ease-out), transform 120ms var(--sc-ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-hero-secondary:hover {
+    background: #1B2736;
+    border-color: #F29132;
+  }
+}
+.btn-hero-secondary:active { transform: scale(0.98); }
 .hero-meta-note {
   font-family: var(--sc-font-mono);
   font-size: 0.76rem;
   color: var(--sc-ink-soft);
+  margin: 0;
 }
 
 /* Plane 4: Focal 500kV Steel Pylon + Glowing Copper Transformer RGBA Cutout */
@@ -1326,7 +1401,18 @@ body {
 
 @media (max-width: 400px) {
   .hero-title { font-size: 1.95rem; }
-  .hero-sub { font-size: 0.88rem; margin-bottom: 0.75rem; }
+  .hero-sub { font-size: 0.88rem; margin-bottom: 0.65rem; }
+  .hero-cta-row { gap: 0.5rem; margin-bottom: 0.45rem; }
+  .btn-hero-pdf {
+    width: 100%;
+    padding: 0.72rem 1rem;
+    font-size: 0.96rem;
+  }
+  .btn-hero-secondary {
+    width: 100%;
+    padding: 0.62rem 0.95rem;
+    font-size: 0.72rem;
+  }
   .stat-ledger { grid-template-columns: 1fr; }
   .stat-row:nth-child(even) { padding-left: 0; border-left: 0; }
   .legs-strip { grid-template-columns: 1fr; }
