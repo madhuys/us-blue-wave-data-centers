@@ -1,0 +1,31 @@
+{
+  "family": "swiss",
+  "preset": null,
+  "mood": "high-voltage substation at dusk, energized copper busbars, gunmetal storm slate, porcelain insulator bone, macro dispatch precision",
+  "colors": {
+    "background": "#0B1017",
+    "surface": "#131C27",
+    "text": "#EDF1F7",
+    "muted": "#97A6BA",
+    "primary": "#F29132",
+    "secondary": "#3B76E6",
+    "accent": "#F29132"
+  },
+  "chart": [
+    "#F29132",
+    "#3B76E6",
+    "#36B37E",
+    "#E05252",
+    "#97A6BA",
+    "#D9B48F"
+  ],
+  "fonts": {
+    "heading": "Bricolage Grotesque",
+    "body": "Work Sans"
+  },
+  "radius": 2,
+  "image": "plain",
+  "variant": 3,
+  "brand": null,
+  "written_by": "design-direction"
+}

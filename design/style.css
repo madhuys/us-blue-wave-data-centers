@@ -1,0 +1,30 @@
+@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/BricolageGrotesque-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/BricolageGrotesque-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Work Sans"; src: url("../fonts/WorkSans-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Work Sans"; src: url("../fonts/WorkSans-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Work Sans"; src: url("../fonts/WorkSans-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Space Mono"; src: url("../fonts/SpaceMono-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Space Mono"; src: url("../fonts/SpaceMono-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+
+/* design direction: swiss (high-voltage substation at dusk, energized copper busbars, gunmetal storm slate, porcelain insulator bone, macro dispatch precision) - written from design/style.json */
+:root {
+  --bg: #0B1017;
+  --surface: #131C27;
+  --text: #EDF1F7;
+  --muted: #97A6BA;
+  --primary: #F29132;
+  --primary-text: #0B1017;
+  --on-primary: #0B1017;
+  --secondary: #3B76E6;
+  --accent: #F29132;
+  --chart-1: #F29132;
+  --chart-2: #3B76E6;
+  --chart-3: #36B37E;
+  --chart-4: #E05252;
+  --chart-5: #97A6BA;
+  --radius: 2px;
+  --font-heading: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: dark;
+}
